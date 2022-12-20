@@ -1,0 +1,48 @@
+﻿@model Book
+
+<form method="post" asp-action="Edit">
+    <div class="border p-5 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit book</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="col-6 mb-3">
+                <label asp-for="Author"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label asp-for="Info"></label>
+                <input asp-for="Info" class="form-control" />
+                <span asp-validation-for="Info" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label asp-for="Link"></label>
+                <input asp-for="Link" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="w-50 text-end">
+                <button type="submit" class="btn btn-primary w-25">Update</button>
+                <a asp-controller="Book" asp-action="Index" class="btn btn-secondary w-25">Back to list</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
